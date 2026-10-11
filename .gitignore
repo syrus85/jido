@@ -1,0 +1,10 @@
+# 공개 저장소 — 올릴 파일만 예외로 연다 (원본 HTML·데이터·비밀번호·빌드 도구는 절대 안 올라감)
+*
+!.gitignore
+!index.html
+!sw.js
+!manifest.webmanifest
+!icon-192.png
+!icon-512.png
+!icon-maskable.png
+!apple-touch-icon.png
