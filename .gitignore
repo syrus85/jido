@@ -8,3 +8,6 @@
 !icon-512.png
 !icon-maskable.png
 !apple-touch-icon.png
+!tiles/
+!tiles/s2/
+!tiles/s2/**
