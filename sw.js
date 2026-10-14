@@ -1,4 +1,4 @@
-const C='jido-f7acbc9d39';
+const C='jido-7d07bd58b7';
 const FILES=['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable.png','apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(FILES)));self.skipWaiting()});
 const TILES='jido-tiles-1';
