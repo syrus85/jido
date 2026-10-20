@@ -1,4 +1,4 @@
-const C='jido-01020c674b';
+const C='jido-feee9ae135';
 const FILES=['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable.png','apple-touch-icon.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(FILES)));self.skipWaiting()});
 const TILES='jido-s2-2025-11-22';
@@ -8,6 +8,7 @@ self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET')return;
   const u=new URL(e.request.url);
   if(u.origin!==location.origin)return;
+  if(u.pathname.endsWith('/ver.json'))return;   // 새 금지·공지 확인용 — 늘 서버에서 (앱이 이걸로 「새 금지 구역」 띠를 띄움)
   if(u.pathname.includes('/tiles/')){
     // 센티넬 위성 조각(우리가 만든 것) — 한 번 본 건 폰에 두고 다음엔 바로 꺼낸다(전파 약한 바다에서도 본 곳은 뜸)
     e.respondWith(caches.open(TILES).then(c=>c.match(e.request).then(hit=>hit||fetch(e.request).then(r=>{if(r.ok)c.put(e.request,r.clone());return r}))));
